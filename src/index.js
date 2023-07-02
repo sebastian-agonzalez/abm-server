@@ -3,13 +3,14 @@ const { ApolloServer, gql } = require('apollo-server');
 const casual = require("casual");
 const Employee = require('./models/employee');
 
+
 const EMPLOYEE_DATA_MOCK =
     [
         {
             id: casual.uuid, name: casual.first_name, lastname: null, beginDate: casual.date('YYYY-MM-DD'), endDate: null, registrationStatus: "PENDING", area: "IT", profilePic: "https://members-api.parliament.uk/api/Members/4743/Portrait?cropType=OneOne&webVersion=false"
         },
         {
-            id: casual.uuid, name: casual.first_name, lastname: casual.last_name, beginDate: casual.date('YYYY-MM-DD'), endDate: casual.date('YYYY-MM-DD'), registrationStatus: "COMPLETE", area: "IT", profilePic: "https://awnnetwork.org/wp-content/uploads/2022/09/Angelica-Vega-square.webp"
+            id: casual.uuid, name: casual.first_name, lastname: casual.last_name, beginDate: casual.date('YYYY-MM-DD'), endDate: null, registrationStatus: "COMPLETE", area: "IT", profilePic: "https://awnnetwork.org/wp-content/uploads/2022/09/Angelica-Vega-square.webp"
         },
         {
             id: casual.uuid, name: casual.first_name, lastname: casual.last_name, beginDate: casual.date('YYYY-MM-DD'), endDate: null, registrationStatus: "COMPLETE", area: "HHRR", profilePic: "https://members-api.parliament.uk/api/Members/4530/Portrait?cropType=OneOne&webVersion=false"
@@ -21,7 +22,7 @@ const EMPLOYEE_DATA_MOCK =
             id: casual.uuid, name: casual.first_name, lastname: casual.last_name, beginDate: casual.date('YYYY-MM-DD'), endDate: null, registrationStatus: "COMPLETE", area: "Accounting", profilePic: "https://members-api.parliament.uk/api/Members/4070/Portrait?cropType=OneOne&webVersion=false"
         },
         {
-            id: casual.uuid, name: casual.first_name, lastname: null, beginDate: casual.date('YYYY-MM-DD'), endDate: casual.date('YYYY-MM-DD'), registrationStatus: "PENDING", area: null, profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLe0Mmf01BQ1Pu9O7kfn-djqmy_mGEWjCR9LXLRsRzAr8cZAqX2u20TUm2zxQOKHTpCow&usqp=CAU"
+            id: casual.uuid, name: casual.first_name, lastname: null, beginDate: casual.date('YYYY-MM-DD'), endDate: null, registrationStatus: "PENDING", area: null, profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLe0Mmf01BQ1Pu9O7kfn-djqmy_mGEWjCR9LXLRsRzAr8cZAqX2u20TUm2zxQOKHTpCow&usqp=CAU"
         },
     ]
     ;
