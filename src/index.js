@@ -44,7 +44,7 @@ type Employee {
     registrationStatus: RegStatus! 
     area: String
         @oneOf(values: ["IT", "HHRR", "Accounting", "Customer Care"]),
-    profilePic: String!
+    profilePic: String
 }
 
 type Query {
@@ -101,7 +101,7 @@ type ResponseInfo {
 const resolvers = {
     Query: {
         employeesData: () => {
-            console.log('entra');
+            //console.log('entra');
             const data =
             {
                 employees: EMPLOYEE_DATA_MOCK,
@@ -142,12 +142,12 @@ const resolvers = {
             return employee
         },
         editEmployee: (_, args) => {
-            console.log('arg data', args.data);
+            //console.log('arg data', args.data);
             const employee = new Employee(args.data);
-            console.log('new employee', employee);
-            console.log('index', EMPLOYEE_DATA_MOCK.findIndex((e) => e.id === employee.id));
+            //console.log('new employee', employee);
+            //console.log('index', EMPLOYEE_DATA_MOCK.findIndex((e) => e.id === employee.id));
             EMPLOYEE_DATA_MOCK[EMPLOYEE_DATA_MOCK.findIndex((e) => e.id === employee.id)] = employee;
-            console.log(EMPLOYEE_DATA_MOCK[EMPLOYEE_DATA_MOCK.indexOf(employee)])
+            //console.log(EMPLOYEE_DATA_MOCK[EMPLOYEE_DATA_MOCK.indexOf(employee)])
             return employee
         },
     }
